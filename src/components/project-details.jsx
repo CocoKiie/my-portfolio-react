@@ -45,11 +45,12 @@ function ProjectDetails() {
         setImages(data.images.split(',').map(image => image.trim()));
         setHash(data.hash.split('`').map(hash => hash.trim()));
         setAlt(data.alt.split(',').map(alt => alt.trim()));
+      } catch (err) {
+        console.error('Erreur lors de la récupération des données :', err);
       }
-      catch (err) { console.error('Erreur lors de la récupération des données :', err) };
     }
     FetchData();
-  }, [projectId]);
+  }, [projectId, navigate]);
 
   if (project && project.tags) {
     return (
@@ -141,7 +142,7 @@ function ProjectDetails() {
             <h2>Le brief</h2>
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.brief) }}></p>
           </motion.div>
-  
+
           <motion.div className='explications'
             initial="hidden"
             whileInView="visible"
@@ -155,7 +156,7 @@ function ProjectDetails() {
             <h2>Ma démarche</h2>
             <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.demarche) }}></p>
           </motion.div>
-  
+
           <motion.div className='explications'
             initial="hidden"
             whileInView="visible"
