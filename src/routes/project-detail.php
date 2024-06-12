@@ -40,6 +40,7 @@ try {
 
     // Vérifie si le projet existe
     if (!$project) {
+        header("HTTP/1.0 404 Not found", true, 404);
         throw new Exception('Projet non trouvé.');
     }
 

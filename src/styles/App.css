@@ -38,6 +38,12 @@ nav a {
   border: 1px solid var(--black);
   border-radius: 50px;
   cursor: pointer;
+  transition: 0.3s;
+}
+
+.page2 nav li.return-button:hover{
+  scale: 1.05;
+  transition: 0.3s;
 }
 
 nav>div {
@@ -712,6 +718,12 @@ section.projects div div.voir-plus {
   flex-direction: column;
   align-items: center;
   gap: 5px;
+  transition: 0.3s;
+}
+
+section.projects div div.voir-plus:hover{
+  transition: 0.3s;
+  scale: 1.05;
 }
 
 section.projects div div.voir-plus img {
@@ -754,6 +766,12 @@ section.projects div div.voir-plus button {
 
   section.projects div ul.projects-list li a div.projects-overlay p {
     padding: 10px 24px;
+  }
+}
+
+@media screen and (max-width: 760px) {
+  section.projects div ul.filtres {
+    position: inherit;
   }
 }
 
@@ -1154,6 +1172,19 @@ div.page2 div.gallerie+div div:nth-child(2) {
   }
 }
 
+@media screen and (max-width: 1100px) {
+  div.page2 div.gallerie {
+    flex-direction: column;
+  }
+  div.page2 div.gallerie + div {
+    bottom: 142px !important;
+    left: 11%;
+  }
+  div.page2 h2 {
+    margin: 100px auto 20px auto;
+  }
+}
+
 /*---------------------*\
 Page Mentions
 \*---------------------*/
@@ -1189,4 +1220,34 @@ div.mentions a{
   div.mentions{
     width: 83%;
   }
+}
+
+/*---------------------*\
+Page 404
+\*---------------------*/
+div.erreur-page{
+  height: 74vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center
+}
+
+div.erreur-page nav+p{
+  font-size: 24vw;
+  font-family: 'Le Murmure';
+  margin: 50px auto 0 auto;
+  padding: 0;
+  width: fit-content;
+}
+
+div.erreur-page p+a{
+  text-decoration: underline;
+  display: inline-block;
+  padding: 10px;
+  transition: 0.3s;
+}
+
+div.erreur-page p+a:hover{
+  scale: 1.05;
+  transition: 0.3s;
 }

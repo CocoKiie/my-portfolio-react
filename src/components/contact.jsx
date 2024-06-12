@@ -1,25 +1,49 @@
 import '../styles/App.css';
 import React, { Suspense } from 'react';
-
+import { motion } from 'framer-motion';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
+
 const Spline = React.lazy(() => import('@splinetool/react-spline'));
 
-
-function Contact() {
+const Contact = () => {
   return (
-    <section className='contact' id='contact' aria-label='Page Contact'>
-      <div>
+    <motion.section
+      className='contact'
+      id='contact'
+      aria-label='Page Contact'
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.1 }}
+      variants={{
+        hidden: { opacity: 0, y: 50 },
+        visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+      }}
+    >
+      <motion.div
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { delay: 0.5, duration: 0.5 } }
+        }}
+      >
         <h2>Contact</h2>
         <ul>
-          <li>
+          <motion.li
+            whileHover={{ scale: 1.1, color: "#f00" }}
+            whileTap={{ scale: 0.95 }}
+          >
             <a href="mailto:laurieperbet@gmail.com" target='_blank' rel="noreferrer">
               <svg role="img" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg" className='svg' aria-label="Image d'un mail">
                 <path d="M20 4H6C4.897 4 4 4.897 4 6V11H6V8L12.4 12.8C12.5732 12.9297 12.7837 12.9998 13 12.9998C13.2163 12.9998 13.4268 12.9297 13.6 12.8L20 8V17H12V19H20C21.103 19 22 18.103 22 17V6C22 4.897 21.103 4 20 4ZM13 10.75L6.666 6H19.334L13 10.75Z" fill="black" />
                 <path d="M2 13C2 12.4477 2.44772 12 3 12H8C8.55228 12 9 12.4477 9 13V13C9 13.5523 8.55228 14 8 14H3C2.44772 14 2 13.5523 2 13V13ZM4 16C4 15.4477 4.44772 15 5 15H9C9.55228 15 10 15.4477 10 16V16C10 16.5523 9.55228 17 9 17H5C4.44772 17 4 16.5523 4 16V16ZM7 19C7 18.4477 7.44772 18 8 18H10C10.5523 18 11 18.4477 11 19V19C11 19.5523 10.5523 20 10 20H8C7.44772 20 7 19.5523 7 19V19Z" fill="black" />
               </svg>
               laurieperbet@gmail.com</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1, color: "#f00" }}
+            whileTap={{ scale: 0.95 }}
+          >
             <a href="tel:+3350606847">
               <svg role="img" aria-hidden="true" width="18" height="18" viewBox="0 0 18 18" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg" className='svg' aria-label="Image d'un téléphone">
                 <g clipPath="url(#clip0_14_99)">
@@ -32,8 +56,11 @@ function Contact() {
                 </defs>
               </svg>
               0650606847</a>
-          </li>
-          <li>
+          </motion.li>
+          <motion.li
+            whileHover={{ scale: 1.1, color: "#f00" }}
+            whileTap={{ scale: 0.95 }}
+          >
             <a href="https://www.linkedin.com/in/laurieperbet/" rel="noreferrer" target='_blank'>
               <svg role="img" aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fillRule="currentColor" xmlns="http://www.w3.org/2000/svg" className='svg' aria-label="Logo LinkedIn">
                 <g clipPath="url(#clip0_14_104)">
@@ -46,18 +73,26 @@ function Contact() {
                 </defs>
               </svg>
               in/laurieperbet/</a>
-          </li>
+          </motion.li>
         </ul>
-      </div>
-      <div className='integration'>
+      </motion.div>
+      <motion.div
+        className='integration'
+        initial="hidden"
+        whileInView="visible"
+        variants={{
+          hidden: { opacity: 0 },
+          visible: { opacity: 1, transition: { delay: 1, duration: 0.5 } }
+        }}
+      >
         <LazyLoadComponent>
           <Suspense fallback={<div>Loading...</div>}>
             <Spline scene="https://prod.spline.design/HmLhHryWsuZfYYKc/scene.splinecode" events-target="global" role="img" aria-hidden="true" aria-label='scene montrant un petit animal sympa en 3D' />
           </Suspense>
         </LazyLoadComponent>
-      </div>
-    </section>
+      </motion.div>
+    </motion.section>
   );
-}
+};
 
 export default Contact;
