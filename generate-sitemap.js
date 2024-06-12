@@ -4,8 +4,8 @@ const { SitemapStream, streamToPromise } = require('sitemap');
 // Importer dynamiquement node-fetch
 const fetchPromise = import('node-fetch');
 fetchPromise.then(({ default: fetch }) => {
-  const DOMAIN = 'http://localhost:3000/';
-  const API_URL = 'http://localhost/portfolio-react/portfolio/src/routes/id-project.php';
+  const DOMAIN = 'https://laurieperbet.great-site.net'; //'https://localhost:3000/'
+  const API_URL = 'https://localhost/portfolio-react/portfolio/src/routes/id-project.php';
 
   async function generateSitemap() {
     const sitemap = new SitemapStream({ hostname: DOMAIN });
@@ -22,7 +22,7 @@ fetchPromise.then(({ default: fetch }) => {
         .then(response => response.json())
         .then(projects => {
           projects.forEach(project => {
-            links.push({ url: `/project/${project.project_id}%${project.titre}`, changefreq: 'weekly', priority: 0.9 });
+            links.push({ url: `/project/${project.project_id}-${project.titre}`, changefreq: 'weekly', priority: 0.9 });
           });
 
           links.forEach(link => sitemap.write(link));

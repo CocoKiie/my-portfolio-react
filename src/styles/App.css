@@ -362,6 +362,10 @@ nav li a img {
 }
 
 @media screen and (max-width: 760px) {
+  nav{
+    top: 50px;
+  }
+
   .theme {
     padding: 0;
   }
@@ -380,7 +384,7 @@ nav li a img {
     z-index: 100;
     width: fit-content;
     right: 0;
-    padding: 10px;
+    padding: 20px;
   }
 
   .menu {
@@ -391,6 +395,7 @@ nav li a img {
     display: flex;
     flex-direction: column;
     position: relative;
+    padding: 24px 26px;
   }
 
   .menu.open ul {
@@ -401,6 +406,7 @@ nav li a img {
     width: 98%;
     padding: 10px 5px;
     top: 58px;
+    margin-top: 16px;
   }
 }
 
@@ -522,6 +528,34 @@ div.star p strong {
     height: 20vw;
     bottom: -6vw;
     right: -7px;
+  }
+}
+
+@media screen and (max-width: 760px){
+  header h1+p {
+    font-size: 14px;
+    padding: 0 5px;
+    margin: 0;
+    width: 155px;
+  }
+
+  header div.star p strong {
+    font-size: 40px;
+  }
+
+  header div.star p {
+    font-size: 10px;
+  }
+
+  header div.star {
+    width: 35vw;
+    height: 35vw;
+    bottom: 33vw;
+  }
+
+  header{
+    margin: 150px auto 0 auto;
+    height: 45vh;
   }
 }
 
