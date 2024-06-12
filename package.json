@@ -3,19 +3,39 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@splinetool/react-spline": "^2.2.6",
+    "@splinetool/runtime": "^1.4.0",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-scripts": "5.0.1",
+    "axios": "^1.6.8",
+    "blurhash": "^2.0.5",
+    "caniuse-lite": "^1.0.30001623",
+    "dompurify": "^3.1.4",
+    "framer-motion": "^11.0.28",
+    "inflight": "^1.0.6",
+    "minimatch": "^9.0.4",
+    "node-fetch": "^3.3.2",
+    "postcss-preset-env": "^9.5.14",
+    "react": "^18.3.1",
+    "react-blurhash": "^0.3.0",
+    "react-dom": "^18.3.1",
+    "react-intersection-observer": "^9.10.2",
+    "react-lazy-load-image-component": "^1.6.0",
+    "react-router-dom": "^6.23.1",
+    "react-router-hash-link": "^2.4.3",
+    "react-scripts": "^5.0.1",
+    "sitemap": "^8.0.0",
+    "update": "^0.7.4",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "npm run clean && react-scripts start",
+    "clean": "rimraf ./node_modules/.cache",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "sitemap": "node generate-sitemap.js"
   },
   "eslintConfig": {
     "extends": [
@@ -34,5 +54,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

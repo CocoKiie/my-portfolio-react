@@ -1,25 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Home from './pages/home';
+import ProjectDetail from './pages/project-detail';
+import Erreur from './pages/erreur';
+import ProjectErreur from './pages/project-erreur';
+import Footer from './components/footer';
+import MentionsLegales from './pages/mentions';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <>
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path="/:filter" element={<Home />} />
+        <Route path="/projects/:idAndTitle" element={<ProjectDetail />} />
+        <Route path="/projects/*" element={<ProjectErreur />} />
+        <Route path="*" element={<Erreur />} />
+        <Route path='/sitemap.xml'/>
+        <Route path='/mentions-legales' element={<MentionsLegales />}/>
+      </Routes>
+      <Footer />
+    </>
+  )
 }
 
 export default App;
