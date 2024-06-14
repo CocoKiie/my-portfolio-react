@@ -84,13 +84,12 @@ function Nav() {
             Retour
           </li>
           <li aria-label="Cliquez pour changez le thème visuel du site">
-            <label htmlFor="theme" className="theme">
+            <label for="theme" className="theme" aria-labelledby="theme">
               <span
-                className="theme__toggle-wrap"
                 tabIndex="0"
-                role="button"
-                aria-label={`Changez le thème du site`}
+                className="theme__toggle-wrap"
                 onKeyDown={handleSwitchToggle}
+                aria-labelledby='theme'
               >
                 <input
                   id="theme"
