@@ -151,6 +151,7 @@ span#progress-value {
 
 div#root {
   padding-top: 6px !important;
+  overflow: hidden;
 }
 
 /* Arrêter toutes les animations */
