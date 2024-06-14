@@ -156,6 +156,7 @@ span#progress-value {
   position: fixed;
   bottom: 68px;
   right: 60px;
+  z-index: 20;
 }
 
 div#root {
