@@ -18,14 +18,14 @@ function Projects() {
   const { filter } = useParams();
 
   useEffect(() => {
-    fetch('http://laurieperbet.great-site.net/routes/tags.php')
+    fetch('https://perret.alwaysdata.net/routes/tags.php')
       .then(response => response.json())
       .then(data => {
         setTags(data);
       })
       .catch(error => console.error('Erreur lors de la récupération des tags:', error));
 
-    fetch('http://laurieperbet.great-site.net/routes/portfolio.php')
+    fetch('https://perret.alwaysdata.net/routes/portfolio.php')
       .then(response => response.json())
       .then(data => {
         setProjects(data);

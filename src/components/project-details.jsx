@@ -33,7 +33,7 @@ function ProjectDetails() {
   useEffect(() => {
     async function FetchData() {
       try {
-        const response = await fetch(`http://laurieperbet.great-site.net/routes/project-detail.php?id=${projectId}`);
+        const response = await fetch(`https://perret.alwaysdata.net/routes/project-detail.php?id=${projectId}`);
         if (!response.ok) {
           navigate("/404");
           throw new Error("projet introuvable ou inexistant");
