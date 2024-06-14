@@ -129,7 +129,7 @@ div#progress {
   width: 70px;
   border-radius: 50%;
   position: fixed;
-  bottom: 130px;
+  bottom: 68px;
   right: 60px;
   display: flex;
   z-index: 5;
