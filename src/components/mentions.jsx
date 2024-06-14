@@ -6,13 +6,13 @@ function Mentions() {
       <h1>Mentions Légales</h1>
       <h2>1 – ÉDITION DU SITE</h2>
       <p>
-        En vertu de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, il est précisé aux utilisateurs du site web <Link rel="noreferrer" to="https://laurieperbet.great-site.net">https://laurieperbet.great-site.net</Link> l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi :
+        En vertu de l’article 6 de la loi n° 2004-575 du 21 juin 2004 pour la confiance dans l’économie numérique, il est précisé aux utilisateurs du site web <Link rel="noreferrer" to="https://perbetlaurie.vercel.app">https://perbetlaurie.vercel.app</Link> l’identité des différents intervenants dans le cadre de sa réalisation et de son suivi :
       </p>
       <h3>Propriétaire du site :</h3>
       <ul>
         <li>Contact : <Link rel="noreferrer" to="mailto:laurie.perbet[at]gmail.com">laurie.perbet[at]gmail.com</Link></li>
         <li>Adresse : Savoie</li>
-        <li>Site web : <Link rel="noreferrer" to="https://laurieperbet.great-site.net">https://laurieperbet.great-site.net</Link></li>
+        <li>Site web : <Link rel="noreferrer" to="https://perbetlaurie.vercel.app">https://perbetlaurie.vercel.app</Link></li>
         <li>Crédits photo : Laurie Perbet</li>
       </ul>
 
@@ -38,20 +38,20 @@ function Mentions() {
 
       <h2>3 – LIMITATIONS DE RESPONSABILITÉ</h2>
 
-      <p>Laurie Perbet ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link>. <br />
-        Laurie Perbet décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link>. <br />
-        Laurie Perbet s’engage à sécuriser au mieux le site <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link>, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu. <br />
+      <p>Laurie Perbet ne pourra être tenu pour responsable des dommages directs et indirects causés au matériel de l’utilisateur, lors de l’accès au site <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link>. <br />
+        Laurie Perbet décline toute responsabilité quant à l’utilisation qui pourrait être faite des informations et contenus présents sur <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link>. <br />
+        Laurie Perbet s’engage à sécuriser au mieux le site <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link>, cependant sa responsabilité ne pourra être mise en cause si des données indésirables sont importées et installées sur son site à son insu. <br />
         Des espaces interactifs (espace contact) sont à la disposition des utilisateurs. Laurie Perbet se réserve le droit de supprimer, sans mise en demeure préalable, tout contenu déposé dans cet espace qui contreviendrait à la législation applicable en France, en particulier aux dispositions relatives à la protection des données. Le cas échéant, Laurie Perbet se réserve également la possibilité de mettre en cause la responsabilité civile et/ou pénale de l’utilisateur, notamment en cas de message à caractère raciste, injurieux, diffamant, ou pornographique, quel que soit le support utilisé (texte, photographie …).</p>
 
       <h2>4 – CNIL ET GESTION DES DONNÉES PERSONNELLES</h2>
-      <p>Conformément aux dispositions de la loi 78 - 17 du 6 janvier 1978 modifiée, l’utilisateur du site <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link> dispose d’un droit d’accès, de modification et de suppression des informations collectées.Pour exercer ce droit, envoyez un message via notre formulaire de contact.</p>
+      <p>Conformément aux dispositions de la loi 78 - 17 du 6 janvier 1978 modifiée, l’utilisateur du site <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link> dispose d’un droit d’accès, de modification et de suppression des informations collectées.Pour exercer ce droit, envoyez un message via notre formulaire de contact.</p>
 
       <h2>5 – LIENS HYPERTEXTES ET COOKIES</h2>
-      <p>Le site <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link> contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link>. <br />
-        La navigation sur le site <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.Un « cookie » est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site.Les données ainsi obtenues permettent d’obtenir des mesures de fréquentation, par exemple.Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur.Aucun cookie ne sera déposé sans votre consentement.Les cookies sont enregistrés pour une durée maximale de 1 mois.</p>
+      <p>Le site <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link> contient des liens hypertextes vers d’autres sites et dégage toute responsabilité à propos de ces liens externes ou des liens créés par d’autres sites vers <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link>. <br />
+        La navigation sur le site <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link> est susceptible de provoquer l’installation de cookie(s) sur l’ordinateur de l’utilisateur.Un « cookie » est un fichier de petite taille qui enregistre des informations relatives à la navigation d’un utilisateur sur un site.Les données ainsi obtenues permettent d’obtenir des mesures de fréquentation, par exemple.Vous avez la possibilité d’accepter ou de refuser les cookies en modifiant les paramètres de votre navigateur.Aucun cookie ne sera déposé sans votre consentement.Les cookies sont enregistrés pour une durée maximale de 1 mois.</p>
 
       <h2>6 - DROIT APPLICABLE ET ATTRIBUTION DE JURIDICTION</h2>
-      <p>Tout litige en relation avec l’utilisation du site <Link rel="noreferrer" to="https://laurieperbet.great-site.net" target="_blank">https://laurieperbet.great-site.net</Link> est soumis au droit français.En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Chambéry.</p>
+      <p>Tout litige en relation avec l’utilisation du site <Link rel="noreferrer" to="https://perbetlaurie.vercel.app" target="_blank">https://perbetlaurie.vercel.app</Link> est soumis au droit français.En dehors des cas où la loi ne le permet pas, il est fait attribution exclusive de juridiction aux tribunaux compétents de Chambéry.</p>
     </div>
   );
 }

@@ -10,10 +10,10 @@ const fetchPromise = import('node-fetch');
 // Une fois que la promesse d'importation est résolue, extraire la fonction 'fetch' du module
 fetchPromise.then(({ default: fetch }) => {
   // Définir le domaine de base pour le sitemap
-  const DOMAIN = 'https://laurieperbet.great-site.net'; // ou 'https://localhost:3000/' pour les tests locaux
+  const DOMAIN = 'https://perbetlaurie.vercel.app'; // ou 'https://localhost:3000/' pour les tests locaux
   
   // Définir l'URL de l'API pour récupérer les données des projets
-  const API_URL = 'https://localhost/portfolio-react/portfolio/src/routes/id-project.php';
+  const API_URL = 'https://perret.alwaysdata.net/routes/id-project.php';
 
   // Déclaration de la fonction asynchrone pour générer le sitemap
   async function generateSitemap() {
