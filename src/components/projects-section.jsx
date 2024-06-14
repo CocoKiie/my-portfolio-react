@@ -124,7 +124,7 @@ function Projects() {
                 onClick={() => handleFilterClick(tag.tag_name)}
                 onKeyPress={(e) => handleKeyPress(e, tag.tag_name)}
                 tabIndex={0}
-                role="button"
+                role="menuitem"
                 className={selectedTag === tag.tag_name ? 'active' : ''}
                 data-original-text={tag.tag_name}
               >
