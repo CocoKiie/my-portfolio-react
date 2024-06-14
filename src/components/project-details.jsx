@@ -1,18 +1,17 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
 import DOMPurify from 'dompurify';
-import LazyImage from './LazyImage';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
 import { motion } from 'framer-motion';
 /* eslint-disable no-unused-vars */
 
+// Utilisez React.lazy pour importer LazyImage de manière asynchrone
+const LazyImage = React.lazy(() => import('./LazyImage'));
+
 function ProjectDetails() {
-  // Utilisez useParams pour obtenir les paramètres de l'URL
   const { idAndTitle } = useParams();
-  // Divisez l'identifiant et le titre du projet à partir du paramètre de l'URL
   const [projectId, projectTitle] = idAndTitle.split('-');
 
-  // Créez des états pour stocker les données du projet
   const [project, setProject] = useState(null);
   const [roles, setRoles] = useState([]);
   const [skills, setSkills] = useState([]);
@@ -31,7 +30,7 @@ function ProjectDetails() {
   };
 
   useEffect(() => {
-    async function FetchData() {
+    async function fetchData() {
       try {
         const response = await fetch(`https://perret.alwaysdata.net/routes/project-detail.php?id=${projectId}`);
         if (!response.ok) {
@@ -49,7 +48,7 @@ function ProjectDetails() {
         console.error('Erreur lors de la récupération des données :', err);
       }
     }
-    FetchData();
+    fetchData();
   }, [projectId, navigate]);
 
   if (project && project.tags) {
@@ -129,47 +128,49 @@ function ProjectDetails() {
           </div>
         </motion.div>
         <LazyLoadComponent>
-          <motion.div className='explications'
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-            variants={{
-              visible: { opacity: 1, y: 0 },
-              hidden: { opacity: 0, y: 20 }
-            }}
-          >
-            <h2>Le brief</h2>
-            <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.brief) }}></p>
-          </motion.div>
+          <Suspense fallback={<div>Loading...</div>}>
+            <motion.div className='explications'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 20 }
+              }}
+            >
+              <h2>Le brief</h2>
+              <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.brief) }}></p>
+            </motion.div>
 
-          <motion.div className='explications'
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-            variants={{
-              visible: { opacity: 1, y: 0 },
-              hidden: { opacity: 0, y: 20 }
-            }}
-          >
-            <h2>Ma démarche</h2>
-            <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.demarche) }}></p>
-          </motion.div>
+            <motion.div className='explications'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 20 }
+              }}
+            >
+              <h2>Ma démarche</h2>
+              <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.demarche) }}></p>
+            </motion.div>
 
-          <motion.div className='explications'
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            transition={{ duration: 0.3 }}
-            variants={{
-              visible: { opacity: 1, y: 0 },
-              hidden: { opacity: 0, y: 20 }
-            }}
-          >
-            <h2>Mon ressenti</h2>
-            <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.ressenti) }}></p>
-          </motion.div>
+            <motion.div className='explications'
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              transition={{ duration: 0.3 }}
+              variants={{
+                visible: { opacity: 1, y: 0 },
+                hidden: { opacity: 0, y: 20 }
+              }}
+            >
+              <h2>Mon ressenti</h2>
+              <p dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(project.ressenti) }}></p>
+            </motion.div>
+          </Suspense>
         </LazyLoadComponent>
         <motion.div className='gallerie'
           initial="hidden"
@@ -218,8 +219,9 @@ function ProjectDetails() {
       </>
     );
   }
+
+  // Ajoutez un retour de chargement ou un message d'erreur ici si nécessaire
+  return <div>Loading...</div>;
 }
-
-
 
 export default ProjectDetails;

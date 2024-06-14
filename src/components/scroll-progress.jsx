@@ -1,39 +1,49 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { motion } from 'framer-motion';
+/* eslint-disable no-unused-vars */
 
 function ScrollProgress() {
+  const [scrollPercentage, setScrollPercentage] = useState(0);
+  const navigate = useNavigate();
+
   const calculateScrollPercentage = () => {
-    let scrollProgress = document.getElementById("progress");
-    let progressValue = document.getElementById("progress-value");
-    if (scrollProgress) {
-      const scrollPosition = window.scrollY;
-      const totalHeight = document.body.scrollHeight - window.innerHeight;
-      scrollProgress.style.background = `conic-gradient(#DEAFE6 ${Math.round((scrollPosition / totalHeight) * 100)}%, #FCE8FF ${Math.round((scrollPosition / totalHeight) * 100)}%)`;
-      progressValue.textContent = `${Math.round((scrollPosition / totalHeight) * 100)}%`;
-      return Math.round((scrollPosition / totalHeight) * 100);
-    }
+    const scrollPosition = window.scrollY;
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const percentage = Math.round((scrollPosition / totalHeight) * 100);
+    setScrollPercentage(percentage);
   };
 
-  window.addEventListener('DOMContentLoaded', () => {
-    // Appeler la fonction pour initialiser la valeur de progress value
+  useEffect(() => {
     calculateScrollPercentage();
 
-    window.addEventListener('scroll', () => {
+    const handleScroll = () => {
       calculateScrollPercentage();
-    });
+    };
 
-    const scrollTopButton = document.getElementById("progress-value");
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
-    scrollTopButton.addEventListener("click", function () {
-      window.scrollTo(0, 0);
-    });
-  });
+  const handleScrollToTop = () => {
+    window.scrollTo(0, 0);
+  };
 
   return (
-    <>
-      <div id="progress" aria-label="Pourcentage de votre position dans la page">
-        <span id="progress-value" aria-label="En cliquant sur la valeur vous retournerez en haut de la page">0%</span>
-      </div>
-    </>
+    <motion.span
+      id="progress-value"
+      aria-label={`En cliquant sur la valeur vous retournerez en haut de la page, ${scrollPercentage}%`}
+      style={{
+        background: `conic-gradient(#DEAFE6 ${scrollPercentage}%, #FCE8FF ${scrollPercentage}%)`
+      }}
+      onClick={handleScrollToTop}
+      role="button"
+      tabIndex={0}
+    >
+      <span>{`${scrollPercentage}%`}</span>
+    </motion.span>
   );
 }
 

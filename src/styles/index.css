@@ -117,36 +117,45 @@ body {
 h2 {
   font-family: 'Le Murmure', sans-serif;
   font-size: 8.15em;
-  margin: 250px 0 20px 0;
+  margin: 0 0 20px 0;
+}
+
+h2:not(h2.projet-titre){
+  margin-top: 250px;
 }
 
 a {
   text-decoration: none;
 }
 
-div#progress {
-  height: 70px;
-  width: 70px;
-  border-radius: 50%;
-  position: fixed;
-  bottom: 68px;
-  right: 60px;
+span#progress-value span {
+  background-color: var(--white);
+  border-radius: 50px;
   display: flex;
-  z-index: 5;
+  width: 50px;
+  height: 50px;
   align-items: center;
   justify-content: center;
 }
 
+div#projects{
+  margin: 0;
+  padding: 0;
+  margin-top: 250px;
+}
 
 span#progress-value {
-  height: calc(100% - 15px);
-  width: calc(100% - 15px);
-  background-color: var(--white);
+  height: 60px;
+  width: 60px;
+  position: fixed;
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  position: fixed;
+  bottom: 68px;
+  right: 60px;
 }
 
 div#root {

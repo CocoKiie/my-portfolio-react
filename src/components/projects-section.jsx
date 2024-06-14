@@ -1,10 +1,11 @@
 import '../styles/App.css';
-import React, { useState, useEffect, useRef, useCallback } from "react";
+import React, { useState, useEffect, useRef, useCallback, lazy, Suspense } from "react";
 import { Link, useParams, useNavigate } from 'react-router-dom';
 import { motion } from "framer-motion";
 import { useInView } from 'react-intersection-observer';
-import LazyImage from './LazyImage';
 import { LazyLoadComponent } from 'react-lazy-load-image-component';
+
+const LazyImage = lazy(() => import('./LazyImage'))
 
 function Projects() {
   const [projects, setProjects] = useState([]);
@@ -89,17 +90,21 @@ function Projects() {
   };
 
   return (
-    <LazyLoadComponent>
-      <section className='projects' id='projects' ref={ref} aria-label='Page Projets'>
+    <>
+    <div id='projects'></div>
+     <LazyLoadComponent>
+      <section className='projects' ref={ref} aria-label='Page Projets'>
         <motion.h2
           initial={{ opacity: 0, y: -20 }}
           animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: -20 }}
           transition={{ duration: 0.5 }}
           role="heading"
           aria-level={2}
+          className='projet-titre'
         >
           Mes projets
         </motion.h2>
+
         <motion.div
           ref={animationRef}
           initial={{ opacity: 0, translateY: -20 }}
@@ -126,7 +131,7 @@ function Projects() {
                 onKeyPress={(e) => handleKeyPress(e, tag.tag_name)}
                 tabIndex={0}
                 role="menuitem"
-                aria-label= {`Voir les projets en ${tag.tag_name}`}
+                aria-label={`Voir les projets en ${tag.tag_name}`}
                 className={selectedTag === tag.tag_name ? 'active' : ''}
                 data-original-text={tag.tag_name}
               >
@@ -134,7 +139,6 @@ function Projects() {
               </motion.li>
             ))}
           </ul>
-
           {/* Projets */}
           <LazyLoadComponent>
             <div>
@@ -142,13 +146,14 @@ function Projects() {
                 {filteredProjects.slice(0, visibleProjects).map((project, index) => (
                   <motion.li key={index} role='listitem'>
                     <Link to={`/projects/${project.project_id}-${project.titre}`} aria-label={`Voir le projet "${project.titre}"`} role="link">
-                      <LazyImage
-                        src={`../${project.intro_img}`}
-                        alt={project.intro_img_alt}
-                        blurhash={project.intro_img_hash}
-                        role="img"
-                      />
-
+                      <Suspense fallback={<div>Loading...</div>}>
+                        <LazyImage
+                          src={`../${project.intro_img}`}
+                          alt={project.intro_img_alt}
+                          blurhash={project.intro_img_hash}
+                          role="img"
+                        />
+                      </Suspense>
                       <div>
                         <h3>{project.titre}</h3>
                         <p>{project.year}</p>
@@ -174,10 +179,11 @@ function Projects() {
                 </motion.div>
               )}
             </div>
-            </LazyLoadComponent>
+          </LazyLoadComponent>
         </motion.div>
-      </section>
-    </LazyLoadComponent>
+      </section >
+      </LazyLoadComponent>
+    </>
   );
 }
 
