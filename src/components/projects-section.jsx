@@ -113,6 +113,7 @@ function Projects() {
               onKeyPress={(e) => handleKeyPress(e, 'all')}
               tabIndex={0}
               role="menuitem"
+              aria-label="Voir tous les projets"
               className={selectedTag === 'all' ? 'active' : ''}
               data-original-text="🔥 Tout"
             >
@@ -125,6 +126,7 @@ function Projects() {
                 onKeyPress={(e) => handleKeyPress(e, tag.tag_name)}
                 tabIndex={0}
                 role="menuitem"
+                aria-label= {`Voir les projets en ${tag.tag_name}`}
                 className={selectedTag === tag.tag_name ? 'active' : ''}
                 data-original-text={tag.tag_name}
               >
@@ -136,10 +138,10 @@ function Projects() {
           {/* Projets */}
           <LazyLoadComponent>
             <div>
-              <ul role='listbox' className='projects-list' aria-label='Liste des projets, pour voir plus de détails, cliquez dessus'>
+              <ul className='projects-list' aria-label='Liste des projets, pour voir plus de détails, cliquez dessus'>
                 {filteredProjects.slice(0, visibleProjects).map((project, index) => (
-                  <motion.li key={index} role='listboxitem'>
-                    <Link to={`/projects/${project.project_id}-${project.titre}`} role="link">
+                  <motion.li key={index} role='listitem'>
+                    <Link to={`/projects/${project.project_id}-${project.titre}`} aria-label={`Voir le projet "${project.titre}"`} role="link">
                       <LazyImage
                         src={`../${project.intro_img}`}
                         alt={project.intro_img_alt}
@@ -168,7 +170,7 @@ function Projects() {
               </ul>
               {filteredProjects.length > visibleProjects && (
                 <motion.div className='voir-plus'>
-                  <button onClick={handleShowMore}>Voir plus</button>
+                  <button onClick={handleShowMore} aria-label='Voir plus de projets'>Voir plus</button>
                 </motion.div>
               )}
             </div>

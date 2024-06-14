@@ -89,6 +89,7 @@ function Nav() {
                 className="theme__toggle-wrap"
                 tabIndex="0"
                 role="button"
+                aria-label={`Changez le thème du site`}
                 onKeyDown={handleSwitchToggle}
               >
                 <input
@@ -97,6 +98,7 @@ function Nav() {
                   type="checkbox"
                   role="switch"
                   name="theme"
+                  aria-label={`Cliquez pour ${darkMode ? "désactiver" : "activer"} le thème sombre`}
                   value="light"
                   checked={darkMode}
                   onChange={switchTheme}
